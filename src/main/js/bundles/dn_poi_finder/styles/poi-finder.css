@@ -1,0 +1,86 @@
+.poi-finder.ctWindow .dijitDialogPaneContent{
+    overflow: hidden;
+}
+
+.finder-wrapper{
+    position: relative;
+}
+.vue-base .finder {
+    height: 150px;
+    width: 150px;
+    margin: auto;
+    position: absolute;
+    top: 150px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.finder .pointer {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    pointer-events: none;
+}
+
+.finder .pointer .content-north,
+.finder .pointer .content-middle,
+.finder .pointer .content-south{
+    flex: 1 1 33.3%;
+}
+
+.finder .pointer .content-north{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.finder .pointer .content-north:after {
+    content: '';
+    position: relative;
+    width: 0;
+    height: 0;
+    z-index: 1;
+    border-style: solid;
+    border-width: 0 17px 21px 17px;
+    border-color: transparent transparent #4CAF50 transparent;
+    bottom: -7px;
+}
+
+.finder .pointer .content-middle {
+    margin: 0 33.3%;
+    border-radius: 100%;
+    background: #4CAF50;
+    position: relative;
+    box-shadow: 0 0 0 7px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.finder .content-middle .heading:after{
+    content: '';
+    background: #449d48;
+    /* width: 70%;  doesn't work in safari' */
+    /* height: 70%;  doesn't work in safari' */
+    width: 35px; height: 35px;
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    display: block;
+    border-radius: 100%;
+    box-sizing: content-box;
+    box-shadow: inset 0px 2px 5px rgba(0,0,0,0.3);
+}
+
+.finder .content-middle .heading{
+    text-align: center;
+    font-size: 1.5em;
+    width: 30px;
+    height: 24px;
+}
+
+.finder .pointer .content-south {}

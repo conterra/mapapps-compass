@@ -1,0 +1,22 @@
+{
+  "name": "dn_device_service",
+  "author": "con terra GmbH",
+  "version": "1.0.0-SNAPSHOT",
+  "description": "Provide access to device API's",
+  "licenses": [],
+  "main": "",
+  "layer": "module",
+  "i18n": [],
+  "productName": "devnet-mapapps-compass",
+  "dependencies": {
+    "dojo": "^1.12.2-1"
+  },
+  "components":[{
+    "name": "DeviceOrientationService",
+    "provides": "device-service.orientation-service"
+  },
+  {
+    "name": "GeolocationService",
+    "provides": "device-service.geolocation-service"
+  }]
+}

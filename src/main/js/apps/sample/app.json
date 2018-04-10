@@ -1,0 +1,67 @@
+{
+    "load": {
+        "allowedBundles": [
+            "system",
+            "templatelayout",
+            "template-seasons",
+            "theme-everlasting",
+            "toolset",
+            "map-init",
+            "dn_compass",
+            "dn_poi_finder",
+            "dn_device_service",
+            "banner"
+        ],
+        "bundleLocations": ["localbundles", "bundles"]
+    },
+    "bundles": {
+        "banner": {
+            "BannerWidget": {
+                "image": "resource('${app}:/images/logo_conterra.png')",
+                "imageWidth": 150,
+                "imagePosition": "above",
+                "link": "http://www.conterra.de"
+            }
+        },
+        "map-init": {
+            "Config": {
+                "map": {
+                    "basemap": [{
+                        "id": "streets",
+                        "title": "Streets",
+                        "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer",
+                        "type": "AGS_TILED",
+                        "visible": true
+                    }],
+                    "layers": [{
+                        "id": "esri_group_sites",
+                        "title": "Esri Group Sites",
+                        "url": "https://services.conterra.de/arcgis/rest/services/common/standorte/FeatureServer",
+                        "type": "AGS_FEATURE",
+                        "elevationInfo": {
+                            "mode": "on-the-ground"
+                        },
+                        "layerId": 0,
+                        "visible": true,
+                        "outFields": ["*"]
+                    }]
+                },
+                "view": {
+                    "viewmode": "2D",
+                    "extent": {
+                        "xmin": 500000,
+                        "ymin": 5700000,
+                        "xmax": 1800000,
+                        "ymax": 7700000,
+                        "spatialReference": 3857
+                    }
+                }
+            }
+        },
+        "toolset": {
+            "ToolsetManager": {
+                "toolsets": []
+            }
+        }
+    }
+}

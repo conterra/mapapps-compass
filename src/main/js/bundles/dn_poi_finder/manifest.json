@@ -1,0 +1,103 @@
+{
+  "name": "dn_poi_finder",
+  "author": "con terra GmbH",
+  "version": "1.0.0-SNAPSHOT",
+  "description": "Provide POI finder widget",
+  "licenses": [],
+  "main": "",
+  "layer": "module",
+  "i18n": [],
+  "productName": "devnet-mapapps-compass",
+  "dependencies": {
+    "dojo": "^1.12.2-1",
+    "dijit": "^1.12.2-1",
+    "esri": "^4.4.0",
+    "apprt-core": "^4.3.0",
+    "apprt-vue": "^4.3.0",
+    "apprt-vuetify": "^4.3.0",
+    "apprt-binding": "^4.3.0",
+    "dn_device_service": "1.0.0-SNAPSHOT",
+    "vue": "^2.4.1"
+  },
+  "CSS-Themes-Extension": [{
+    "name": "*",
+    "files": ["./styles/poi-finder.css"]
+  }],
+  "layout-widgets": [
+    {
+      "widgetRole": "poi-finder",
+      "template": "seasons",
+      "sublayout": ["desktop","tablet_portrait","tablet_landscape","mobile_portrait"],
+      "window": {
+        "dockTool": "poiToggleTool",
+
+        "dockingBar": "${id}-dockingBarBottomLeft",
+        "marginBox": {
+          "t": 0,
+          "r": 0,
+          "l": 0,
+          "b": 40
+        },
+        "fixEdgesInViewPort": {
+          "b": true,
+          "t": true,
+          "r": true,
+          "l": true
+        },
+        "minimizeOnClose": true,
+        "dockable": true,
+        "draggable": false,
+        "closable": true,
+        "maximizable": false,
+        "resizable": false
+      }
+    },
+    {
+      "widgetRole": "poi-finder",
+      "template": "seasons",
+      "sublayout": ["mobile_landscape"],
+      "window": {
+        "template": "seasons",
+        "dockingBar": "${id}-dockingBarLeft"
+      }
+    }
+  ],
+  "components": [
+    {
+      "name": "PoiFinderFactory",
+      "instanceFactory": true,
+      "provides": [
+        "dijit.Widget"
+      ],
+      "properties": {
+        "widgetRole": "poi-finder"
+      },
+      "references":[
+        {
+          "name": "geolocationService",
+          "providing": "device-service.geolocation-service"
+        },
+        {
+          "name": "orientationService",
+          "providing": "device-service.orientation-service"
+        }
+      ]
+    },
+    {
+      "name": "PoiFinderToggleTool",
+      "impl": "ct/tools/Tool",
+      "provides": [
+        "ct.tools.Tool"
+      ],
+      "propertiesConstructor": true,
+      "properties": {
+        "toolRole": "toolset",
+        "id": "poiToggleTool",
+        "iconClass": "icon-marker",
+        "title": "POI Finder",
+        "tooltip": "POI Finder",
+        "togglable": true
+      }
+    }
+  ]
+}

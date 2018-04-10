@@ -1,0 +1,200 @@
+.compass.ctWindow .dijitDialogPaneContent{
+    overflow: hidden;
+}
+
+.vue-base .compass {
+    height: 350px;
+    width: 350px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.compass .pointer {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    pointer-events: none;
+}
+
+.compass .pointer .content-north,
+.compass .pointer .content-middle,
+.compass .pointer .content-south{
+    flex: 1 1 33.3%;
+}
+
+.compass .pointer .content-north{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.compass .pointer .content-north:after {
+    content: '';
+    position: relative;
+    width: 0;
+    height: 0;
+    z-index: 1;
+    border-style: solid;
+    border-width: 0 40px 48px 40px;
+    border-color: transparent transparent #e74c3c transparent;
+    bottom: -16px;
+}
+
+.compass .pointer .content-middle {
+    margin: 0 33.3%;
+    border-radius: 100%;
+    background: #e74c3c;
+    position: relative;
+    box-shadow: 0 0 0 32px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.compass .content-middle .heading:after{
+    content: '';
+    background: #da4737;
+    /* width: 70%;  doesn't work in safari' */
+    /* height: 70%;  doesn't work in safari' */
+    width: 82px; height: 82px;
+    position: absolute;
+    top: 17px;
+    left: 17px;
+    display: block;
+    border-radius: 100%;
+    box-sizing: content-box;
+    box-shadow: inset 0px 4px 11px rgba(0,0,0,0.3);
+}
+
+.compass .content-middle .heading{
+    text-align: center;
+    font-size: 1.5em;
+    width: 70px;
+    height: 55px;
+}
+
+.compass .content-middle .heading-textual,
+.compass .content-middle .heading-numeric{
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.compass .content-middle .heading-textual{
+    font-weight: bold;
+}
+
+.compass .pointer .content-south {}
+
+.compass .background {
+    background: #2C363A;
+    border-radius: 100%;
+    border: 10px solid #e74c3c;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: transform .3s ease-in-out;
+}
+
+.compass .letter {
+    text-align: right;
+    position: absolute;
+    color: #fff;
+    font-size: 2em;
+}
+.compass .letter.north {
+    font-weight: bold;
+    top: 7%;
+    left: 50%;
+    margin-left: -0.4em;
+}
+
+.compass .letter.south {
+    bottom: 7%;
+    left: 50%;
+    transform: rotate(180deg);
+    margin-left: -0.4em;
+}
+
+.compass .letter.west {
+    top: 50%;
+    left: 7%;
+    transform: rotate(270deg);
+    margin-top: -0.6em;
+}
+
+.compass .letter.east {
+    top: 50%;
+    right: 7%;
+    transform: rotate(90deg);
+    margin-top: -.4em;
+}
+
+.compass .marker{
+    padding-top: 15px;
+}
+.compass .marker:before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 20px 20px 0 20px;
+    border-color: #e74c3c transparent transparent transparent;
+}
+
+.compass .marker.south,
+.compass .marker.west,
+.compass .marker.east {
+    display: none;
+}
+
+
+.compass .dial{
+    width: 100%;
+    position: absolute;
+    height: 100%;
+}
+.compass .dial .dot{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    display: block;
+    width: .2em;
+    height: .2em;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.compass .dial .dot:nth-child(1){transform: rotate(-75deg) translateX(123px);}
+.compass .dial .dot:nth-child(2){transform: rotate(-60deg) translateX(123px);}
+.compass .dial .dot:nth-child(3){transform: rotate(-45deg) translateX(123px);}
+.compass .dial .dot:nth-child(4){transform: rotate(-30deg) translateX(123px);}
+.compass .dial .dot:nth-child(5){transform: rotate(-15deg) translateX(123px);}
+
+.compass .dial .dot:nth-child(6){transform: rotate(15deg) translateX(123px);}
+.compass .dial .dot:nth-child(7){transform: rotate(30deg) translateX(123px);}
+.compass .dial .dot:nth-child(8){transform: rotate(45deg) translateX(123px);}
+.compass .dial .dot:nth-child(9){transform: rotate(60deg) translateX(123px);}
+.compass .dial .dot:nth-child(10){transform: rotate(75deg) translateX(123px);}
+
+.compass .dial .dot:nth-child(11){transform: rotate(105deg) translateX(123px);}
+.compass .dial .dot:nth-child(12){transform: rotate(120deg) translateX(123px);}
+.compass .dial .dot:nth-child(13){transform: rotate(135deg) translateX(123px);}
+.compass .dial .dot:nth-child(14){transform: rotate(150deg) translateX(123px);}
+.compass .dial .dot:nth-child(15){transform: rotate(165deg) translateX(123px);}
+
+.compass .dial .dot:nth-child(16){transform: rotate(195deg) translateX(123px);}
+.compass .dial .dot:nth-child(17){transform: rotate(210deg) translateX(123px);}
+.compass .dial .dot:nth-child(18){transform: rotate(225deg) translateX(123px);}
+.compass .dial .dot:nth-child(19){transform: rotate(240deg) translateX(123px);}
+.compass .dial .dot:nth-child(20){transform: rotate(255deg) translateX(123px);}
