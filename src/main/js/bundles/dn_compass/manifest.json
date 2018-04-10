@@ -1,7 +1,7 @@
 {
   "name": "dn_compass",
   "author": "con terra GmbH",
-  "version": "1.0.0",
+  "version": "1.0.1-SNAPSHOT",
   "description": "Provide compass widget",
   "licenses": [],
   "main": "",
@@ -15,7 +15,7 @@
     "apprt-vue": "^4.3.0",
     "apprt-vuetify": "^4.3.0",
     "apprt-binding": "^4.3.0",
-    "dn_device_service": "1.0.0",
+    "dn_device_service": "1.0.1-SNAPSHOT",
     "vue": "^2.4.1"
   },
   "CSS-Themes-Extension": [{
