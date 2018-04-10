@@ -1,7 +1,7 @@
 {
   "name": "dn_device_service",
   "author": "con terra GmbH",
-  "version": "1.0.0-SNAPSHOT",
+  "version": "1.0.0",
   "description": "Provide access to device API's",
   "licenses": [],
   "main": "",

@@ -1,7 +1,7 @@
 {
   "name": "dn_poi_finder",
   "author": "con terra GmbH",
-  "version": "1.0.0-SNAPSHOT",
+  "version": "1.0.0",
   "description": "Provide POI finder widget",
   "licenses": [],
   "main": "",
@@ -16,7 +16,7 @@
     "apprt-vue": "^4.3.0",
     "apprt-vuetify": "^4.3.0",
     "apprt-binding": "^4.3.0",
-    "dn_device_service": "1.0.0-SNAPSHOT",
+    "dn_device_service": "1.0.0",
     "vue": "^2.4.1"
   },
   "CSS-Themes-Extension": [{
